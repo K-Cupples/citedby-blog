@@ -1,0 +1,21 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".post-title", ".post-description", ".post-content h2"],
+  },
+  url,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

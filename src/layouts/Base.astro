@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  keywords?: string[];
+}
+
+const { title, description, image, keywords = [] } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImage = image || '/blog/og-default.png';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta -->
+    <title>{title} | CitedBy Blog</title>
+    <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    <meta name="author" content="Kyle Cupples" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:site_name" content="CitedBy" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="border-b border-page-border bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <nav class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="https://citedby.co" class="font-bold text-xl text-page-fg hover:text-brand-green-dark transition-colors">
+          CitedBy
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium text-page-muted">
+          <a href="/blog" class="hover:text-page-fg transition-colors">Blog</a>
+          <a
+            href="https://citedby.co/signup"
+            class="bg-brand-green text-page-fg px-4 py-2 rounded-lg font-semibold hover:bg-brand-green-dark hover:text-white transition-colors"
+          >
+            Try Free
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-page-border mt-20 py-12">
+      <div class="max-w-4xl mx-auto px-6 text-center text-sm text-page-muted">
+        <p>&copy; {new Date().getFullYear()} CitedBy. Answer Engine Optimization for brands that want to be recommended by AI.</p>
+      </div>
+    </footer>
+  </body>
+</html>
