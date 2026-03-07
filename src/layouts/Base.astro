@@ -10,7 +10,7 @@ interface Props {
 
 const { title, description, image, keywords = [] } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImage = image || '/blog/og-default.png';
+const socialImage = image || '/og-default.png';
 ---
 
 <!doctype html>
@@ -57,7 +57,7 @@ const socialImage = image || '/blog/og-default.png';
           CitedBy
         </a>
         <div class="flex items-center gap-6 text-sm font-medium text-page-muted">
-          <a href="/blog" class="hover:text-page-fg transition-colors">Blog</a>
+          <a href="/" class="hover:text-page-fg transition-colors">Blog</a>
           <a
             href="https://citedby.co/signup"
             class="bg-brand-green text-page-fg px-4 py-2 rounded-lg font-semibold hover:bg-brand-green-dark hover:text-white transition-colors"
