@@ -1,0 +1,20 @@
+# CitedBy Blog
+
+## About
+CitedBy is an Answer Engine Optimization (AEO) platform that helps brands track and improve their visibility in AI-powered search tools like ChatGPT, Claude, and Perplexity. This blog covers AI visibility, AEO strategy, and how to get your brand recommended by AI.
+
+## Author
+Kyle Cupples - Founder of CitedBy and Code Untold. Technical partner at Theanna.
+
+## Topics
+- Answer Engine Optimization (AEO)
+- AI brand visibility and citation tracking
+- SEO vs AEO strategy
+- ChatGPT, Claude, and Perplexity optimization
+- Schema markup for AI citations
+- Structured data for AI search
+
+## Links
+- Product: https://citedby.co
+- Blog: https://blog.citedby.co
+- Sitemap: https://blog.citedby.co/sitemap.xml
