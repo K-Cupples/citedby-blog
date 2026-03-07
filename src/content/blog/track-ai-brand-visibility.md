@@ -109,7 +109,7 @@ You can start right now, manually:
 
 **Step 4: Repeat weekly.** AI recommendations change fast. A brand that's recommended today might not be next week.
 
-The problem is scale. Doing this manually for 20 prompts across 3 engines takes hours. Doing it daily is a full-time job. That's the problem I started building tooling to solve.
+The problem is scale. Doing this manually for 20 prompts across 3 engines takes hours. Doing it daily is a full-time job. That's why I built [CitedBy](https://citedby.co) - it runs these checks automatically across ChatGPT, Claude, and Perplexity and tracks how your visibility changes over time.
 
 ## What Actually Improves Your AI Visibility
 
