@@ -158,6 +158,7 @@ const readingTime = () => {
       <a
         href="https://citedby.co/signup"
         class="inline-block bg-brand-green text-page-fg font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-dark hover:text-white transition-colors"
+        onclick="window.posthog && posthog.capture('blog_cta_clicked', { post: document.title, cta: 'start_free_trial' })"
       >
         Start Free Trial
       </a>
