@@ -25,7 +25,7 @@ const posts = (await getCollection('blog')).sort(
       <div class="space-y-8">
         {posts.map((post) => (
           <article class="bg-white rounded-xl border border-page-border p-6 hover:shadow-md transition-shadow">
-            <a href={`/${post.slug}`} class="block group">
+            <a href={`/blog/${post.slug}`} class="block group">
               <div class="flex items-center gap-3 text-sm text-page-muted mb-3">
                 <time datetime={post.data.publishDate.toISOString()}>
                   {post.data.publishDate.toLocaleDateString('en-US', {

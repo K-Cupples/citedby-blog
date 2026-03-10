@@ -2,7 +2,7 @@ import { getCollection } from 'astro:content';
 
 export async function GET() {
   const posts = await getCollection('blog');
-  const site = 'https://blog.citedby.co';
+  const site = 'https://citedby.co/blog';
 
   const urls = [
     `  <url>
